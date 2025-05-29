@@ -1,0 +1,12 @@
+import pandas as pd
+dados=pd.read_csv(r"C:\Users\Feliepe Arruda\OneDrive\Área de Trabalho\Informática\Projeto Análise de Dados\destruicao-de-cigarros-apreendidos.csv", sep='\t')
+dados['Valor']=dados['Valor'].str.replace(",", ".").astype(float)
+print(f"Total de linhas e colunas: {dados.shape}")
+print(f"Média aritmética: {dados['Valor'].mean()}")
+print(f"Moda: {dados['Valor'].mode()}")
+print(f"Mediana: {dados['Valor'].median()}")
+print(f"Valor máximo: {dados['Valor'].max()}")
+print(f"Valor mínimo: {dados['Valor'].min()}")
+print(f"Variância: {dados['Valor'].var()}")
+print(f"Desvio Padrão: {dados['Valor'].std()}")
+print(f"Coeficiente de variação: {(dados['Valor'].std()/dados['Valor'].mean())*100}%")
